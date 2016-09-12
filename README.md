@@ -23,7 +23,7 @@ AZURE_AD_USERNAME=zyz
 # Azure AD account password
 AZURE_AD_PASSWORD=xyz
 # Azure subscription ID
-AZURE_SUBS_ID=5197914b-1af6-4619-992a-587090476643
+AZURE_SUBS_ID=xyz
 # Standard_D1_v2: 1 Core, 3.5 Gb RAM, 50 GB Disk
 # Standard_D2_v2: 2 Core, 7 Gb RAM, 100 GB Disk
 # Standard_D3_v2: 4 Core, 14 Gb RAM, 200 GB Disk
