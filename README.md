@@ -41,7 +41,7 @@ RH_SUBS_USER=xyz
 # Red Hat account password
 RH_SUBS_PASSWORD=xyz
 # Subscription pool id for Openshift packages
-RH_OPENSHIFT_POOL_ID=8a85f98156d9ece00156da8d3b327305
+RH_OPENSHIFT_POOL_ID=xyx
 ```
 
 ## Setup
