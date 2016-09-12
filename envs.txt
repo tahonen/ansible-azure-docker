@@ -1,0 +1,29 @@
+# Name for Azure resource group
+# OSE Master hostname is master-RESOURCE_GROUP_NAME.AZURE_REGION.cloudapp.azure.com
+RESOURCE_GROUP_NAME=zyx
+# Azure compute region
+AZURE_REGION=northeurope
+# Azure AD account username
+AZURE_AD_USERNAME=zyz
+# Azure AD account password
+AZURE_AD_PASSWORD=xyz
+# Azure subscription ID
+AZURE_SUBS_ID=5197914b-1af6-4619-992a-587090476643
+# Standard_D1_v2: 1 Core, 3.5 Gb RAM, 50 GB Disk
+# Standard_D2_v2: 2 Core, 7 Gb RAM, 100 GB Disk
+# Standard_D3_v2: 4 Core, 14 Gb RAM, 200 GB Disk
+# see https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/
+# VM size for master node
+AZURE_VM_SIZE_MASTER=Standard_D1_v2
+# VM size for infra and app nodes
+AZURE_VM_SIZE_NODE=Standard_D1_v2
+# jumphost username
+ADMIN_USERNAME=zyx
+# jumphost password
+ADMIN_PASSWORD=zyx
+# Red Hat account username (access.redhat.com)
+RH_SUBS_USER=xyz
+# Red Hat account password
+RH_SUBS_PASSWORD=xyz
+# Subscription pool id for Openshift packages
+RH_OPENSHIFT_POOL_ID=8a85f98156d9ece00156da8d3b327305
