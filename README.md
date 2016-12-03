@@ -68,7 +68,7 @@ If you start installation directly you have to mount a local directory to contai
 # start installation
 docker run -v /tmp:/ansible-azure/export -it --env-file envs.txt ocpazure
 # start container
-docker run -v /tmp:/ansible-azure/export --env-file envs.txt ocpazure "/bin/bash"
+docker run -it -v /tmp:/ansible-azure/export --env-file envs.txt ocpazure "/bin/bash"
 ```
 
 
