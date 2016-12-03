@@ -55,36 +55,27 @@ git clone https://github.com/tahonen/ansible-azure-docker.git
 cd ansible-azure-docker
 docker build -t ocpazure:latest .
 ```
+Above build command will create an container with name ocpazure
 
 ## Installation
 Open envs.txt to your favorite editor and replace sample values with correct ones.
 
-Installation will start right after you execute docker run command described below. If you just need to start container and check what it contains add "/bin/bash" at the end of the command
+Installation will start right after you execute docker run command described below. If you just need to start container and check what it contains add "/bin/bash" at the end of the command. Also if you need to make modifications to number of VMs installed or other tuning, just start the container not the installation. When you are done with your changes just execute /ansible-azure/install.sh.
+
+If you start installation directly you have to mount a local directory to container so that installer can export SSH key to you. Below example will export key to directory /tmp and the name of the file by default azurekey
 
 ```
 # start installation
-docker run -it --env-file envs.txt ocpazure
+docker run -v /tmp:/ansible-azure/export -it --env-file envs.txt ocpazure
 # start container
-docker run --env-file envs.txt ocpazure "/bin/bash"
+docker run -v /tmp:/ansible-azure/export --env-file envs.txt ocpazure "/bin/bash"
 ```
 
-If you just start container without starting the installation you can use start installation manually executing command below
-
-```
-# Initialize settings from envs
-ansible-playbook -i inventory playbooks/init.yml
-# Start installation
-ansible-playbook --forks=50 -i invetory playbooks/setup_multimaster.new.yml
-```
 
 ## Post install stuff
 
-Installation is done wiht SSH key created when container is build and that key is copied to jumphost. Jumphost is a VM that is used to do the actual installation. If you like to access to jumphost and from there to masters and nodes u need either get the keys from the container or change jumphost key to some other SSH key thru Azure portal. (https://portal.azure.com). Key is changed from VM settings via Set password.
-
-```
-# start container to access SHH keys
-docker run -it ocpazure "/bin/bash"
-```
+You need newly create SSH key to access jumphost. This key is exeport to given host directory or you can read it from .ssh directory if you started installation manually. If you do not manage to get hold of the key you can change SSH key to jumphost vie Azure portal (https://portal.azure.com). Key is changed from VM settings via Set password.
 
 ## TODO
-* Define number of app nodes thru envs.
+* Define number of app and infra nodes thru envs.
+* Export installation logs
