@@ -1,3 +1,5 @@
+# MOVEN TO https://github.com/ivanthelad/ansible-azure/tree/master/docker
+
 # Deploying Openshift Enterprise to Azure with container
 Simple project to help installing HA setup of Openshift Enterprise to Azure. Installer will use https://github.com/ivanthelad/ansible-azure project to do actually installation.
 
